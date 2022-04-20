@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/wrbz15/refacetoring-doc/Chapter1/example/types"
-	statement "github.com/wrbz15/refacetoring-doc/Chapter1/example/version4"
+	statement "github.com/wrbz15/refacetoring-doc/Chapter1/example/version3"
 )
 
 func main() {
