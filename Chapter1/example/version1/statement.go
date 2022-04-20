@@ -1,14 +1,13 @@
 package version1
 
 import (
-	"errors"
 	"fmt"
 	"math"
 
 	"github.com/wrbz15/refacetoring-doc/Chapter1/example/types"
 )
 
-func Statements(invoice types.Invoice, plays types.Plays) (string, error) {
+func Statements(invoice types.Invoice, plays types.Plays) string {
 	var totalsAmount float64 = 0
 	var volumeCredits float64 = 0
 	result := fmt.Sprintf("Statements for %s", invoice.Cusomer)
@@ -36,7 +35,7 @@ func Statements(invoice types.Invoice, plays types.Plays) (string, error) {
 			}
 		default:
 			{
-				return "", errors.New(fmt.Sprintf("unknown tpye %s", play.Type))
+				panic(fmt.Sprintf("unknown tpye %s", play.Type))
 			}
 		}
 
@@ -53,5 +52,5 @@ func Statements(invoice types.Invoice, plays types.Plays) (string, error) {
 	}
 	result += fmt.Sprintf("Amount owed is $%v \n", totalsAmount/100)
 	result += fmt.Sprintf("you earned $%v credits \n", volumeCredits)
-	return result, nil
+	return result
 }
